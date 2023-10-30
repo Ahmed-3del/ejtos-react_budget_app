@@ -104,8 +104,11 @@ export const AppProvider = (props) => {
             return (total = total + item.cost);
         }, 0);
         remaining = state.budget - totalExpenses;
+        if(totalExpenses > state.budget) {
+            alert("you Cannot reduce the budget value lower than the spending! ");
+            }
     }
-
+    
     return (
         <AppContext.Provider
             value={{
